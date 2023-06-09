@@ -1,0 +1,32 @@
+@url = http://localhost:3131
+
+### Create a new Task
+POST {{url}}/tasks
+Content-Type: application/json
+
+{
+  "title": "Task 1",
+  "description": "This Is Task 1"
+}
+
+### Get all tasks
+GET {{url}}/tasks
+
+### Get task
+GET {{url}}/tasks/0b7fda62-70db-40cc-ae16-ef76fd4b4adb
+
+### Update task
+PUT {{url}}/tasks/cfca91f7-1f78-4820-b99c-a6884f24cc84
+Content-Type: application/json
+
+{
+"title": "Updated Task",
+"description": "Description",
+"status": "completed"
+}
+
+### Delete task
+DELETE {{url}}/tasks/cfca91f7-1f78-4820-b99c-a6884f24cc84
+
+###Get tasks with pagination
+GET {{url}}/tasks?limit=3&offset=0
